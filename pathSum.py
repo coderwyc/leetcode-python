@@ -30,22 +30,5 @@ class Solution:
             return False
         elif root.val == sum and root.left is None and root.right is None: # in leaf node satisfy the condition
             return True
-        else:
-            # Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-class Solution:
-    # @param root, a tree node
-    # @param sum, an integer
-    # @return a boolean
-    def hasPathSum(self, root, sum):
-        if root is None:
-            return False
-        elif root.val == sum and root.left is None and root.right is None: # in leaf node satisfy the condition
-            return True
         else: # check to see either left or right child is satisfyed
             return self.hasPathSum(root.left, sum - root.val) or  self.hasPathSum(root.right, sum - root.val)
